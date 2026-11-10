@@ -33,7 +33,7 @@ print('PASS 10 day guides and local Markdown links')
 PYLINKS
 echo 'Checking CloudFormation YAML syntax...' 
 if command -v ruby >/dev/null; then
-  ruby -e 'require "yaml"; ARGV.each { |f| YAML.parse_file(f); puts "PASS YAML #{f}" }' days/day-09-infrastructure-as-code/*.yaml
+  ruby -e 'require "yaml"; ARGV.each { |f| YAML.parse_file(f); puts "PASS YAML #{f}" }' days/day-09-infrastructure-as-code/*.yaml days/day-09-infrastructure-as-code/templates/*.yml
 else echo 'Ruby unavailable: YAML syntax check skipped (use cfn-lint for full CloudFormation validation)'; fi
 if command -v nginx >/dev/null; then echo 'Nginx installed; test application config on a target Linux host as appropriate'; fi
 echo 'PASS offline validation; no AWS calls were made.'

@@ -43,7 +43,7 @@ Practical reader assets for **AWS Cloud Engineering in 10 Days**, by Victor Ebai
 | 6 | Prove the Shop application responds on its instance | [Day 6 — Application](days/day-06-application/README.md) |
 | 7 | Verify ALB routing and Auto Scaling replacement | [Day 7 — Load balancing](days/day-07-load-balancing/README.md) |
 | 8 | Collect application logs and inspect CloudWatch evidence | [Day 8 — Monitoring](days/day-08-monitoring/README.md) |
-| 9 | Validate and deploy small CloudFormation templates | [Day 9 — Infrastructure as code](days/day-09-infrastructure-as-code/README.md) |
+| 9 | Evolve S3 CloudFormation templates through create, update and change set; optional network examples | [Day 9 — Infrastructure as code](days/day-09-infrastructure-as-code/README.md) |
 | 10 | Troubleshoot, verify recovery and remove lab resources | [Day 10 — Operations](days/day-10-operations/README.md) |
 
 ## Other reader files
@@ -71,3 +71,5 @@ AWS resources can incur charges, including running EC2 instances, load balancers
 **Engineering habit:** ORIENT → INSPECT → ACT → VERIFY → DIAGNOSE → RECOVER → CLEAN UP.
 
 Licensed under the [MIT Licence](LICENSE).
+
+**Day 9 template progression:** [S3 baseline](days/day-09-infrastructure-as-code/templates/01-baseline.yml) · [parameterised S3](days/day-09-infrastructure-as-code/templates/02-parameterised.yml) · [versioning change-set proposal](days/day-09-infrastructure-as-code/templates/03-suspend-versioning.yml).

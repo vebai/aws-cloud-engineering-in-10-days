@@ -25,4 +25,6 @@
    Perform the restart even if the diagnostic step fails. The ALB may briefly mark targets unhealthy if this instance is in service.
 4. **Verify:** Nginx is active, `/healthz` returns `ok` and the Shop page is rendered. A healthy instance endpoint does **not** prove an ALB request works; that is Day 7.
 
+**Expected catalogue:** The response from `/` includes `Keyboard - £49`, `Mouse - £25` and `Monitor - £189`. A generic `Shop` heading alone is insufficient to verify the book's actual application content. The `/healthz` endpoint is a plain file containing `ok`.
+
 **Cleanup:** No new resources are created by these checks. Keep the instance for the next lab or terminate only when no ASG depends on it. See [cleanup](../../docs/cleanup.md). Next: [Day 7](../day-07-load-balancing/README.md).

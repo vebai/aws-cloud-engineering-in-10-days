@@ -155,7 +155,16 @@ aws ec2 delete-vpc --vpc-id vpc-REPLACE_ME --region "$AWS_REGION"
 
 For manually built networks with dependencies, detach/delete dependent interfaces/endpoints/gateways, custom routes/route tables, security groups and subnets **before** deleting the VPC. An internet gateway must be detached from the VPC before deletion. If AWS reports `DependencyViolation`, inspect dependencies rather than blindly retrying. Never delete a shared/default VPC.
 
-### 9. IAM roles and the optional lab user (global scope)
+### 9. Temporary CloudWatch IAM policy, IAM roles and optional lab user (global scope)
+
+If you added a *temporary inline CloudWatch logging policy* to an existing role, remove **only that policy** after verifying log delivery and saving evidence. Example for the documented test (confirm actual role and policy name in your private ledger first):
+```bash
+aws iam get-role-policy --role-name shop-incident-lab-e1873c-app-role --policy-name shop-reader-validation-cw-20261110
+aws iam delete-role-policy --role-name shop-incident-lab-e1873c-app-role --policy-name shop-reader-validation-cw-20261110
+```
+Re-run `get-role-policy`: `NoSuchEntity` means that specific inline policy is gone. **Do not delete the existing shared instance role or instance profile.** Use different names if your reader lab has its own dedicated role and policy. Remove local temporary policy JSON files after preserving non-sensitive evidence.
+
+### 10. IAM roles and the optional lab user (global scope)
 
 Check the exact optional IAM user and its dependencies:
 ```bash

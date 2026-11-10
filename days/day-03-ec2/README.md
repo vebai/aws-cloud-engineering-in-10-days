@@ -1,6 +1,6 @@
 # Day 3 — Launch and inspect EC2
 
-**Objective:** Bootstrap a disposable EC2 instance with Nginx and verify that user data produces a reachable local Shop page and health endpoint.
+**Objective:** Bootstrap a disposable EC2 instance with Nginx and verify the same Shop catalogue and `/healthz` file used in the book.
 
 **Where to run:** Mac/Linux or CloudShell for `aws` commands; EC2 **Session Manager** shell for Linux service checks. **Files:** [`user-data.sh`](user-data.sh), [`create-instance.sh`](create-instance.sh).
 
@@ -19,7 +19,7 @@
    bash days/day-03-ec2/create-instance.sh --create
    ```
    Type `CREATE` only after inspecting account, AMI, subnet, security group and pricing. Record the returned instance ID privately. An SSM-managed instance must have role permissions and SSM network connectivity; you can connect through EC2 Console → Instances → Connect → Session Manager when ready.
-3. **On the instance, inside Session Manager**:
+3. **Execution boundary:** Your Mac prompt is not the instance shell. In the AWS Console select EC2 → Instances → your lab instance → Connect → Session Manager → Connect. Confirm `whoami` prints `ssm-user` and `hostname` is the EC2 host. Do not run `sudo nginx -t` on your Mac. **On the instance, inside Session Manager**:
    ```bash
    sudo tail -n 50 /var/log/cloud-init-output.log
    sudo tail -n 50 /var/log/shop-bootstrap.log
@@ -30,5 +30,7 @@
    curl -fsS http://127.0.0.1/healthz
    ```
 4. **Verify:** health reports `ok`, service is active and HTTP listens on port 80. Diagnose any bootstrap failure using root-owned logs with `sudo`. A private instance may intentionally have no direct internet-facing address.
+
+**Source alignment:** The bootstrap writes the same catalogue as [`assets/shop/index.html`](../../assets/shop/index.html) and the same health response as [`assets/shop/healthz`](../../assets/shop/healthz). It uses the installed AMI Nginx default configuration. Before running `sudo`, confirm you are in the EC2 Session Manager Linux shell, not on your Mac.
 
 **Cleanup:** If no longer needed by later days, terminate the **specific lab instance**, not a production instance: `aws ec2 terminate-instances --instance-ids i-REPLACE_ME --region "$AWS_REGION"`, then check termination and inspect retained EBS volumes/IPs. Do not terminate an instance managed by an Auto Scaling group without first addressing the group. See [cleanup](../../docs/cleanup.md). Next: [Day 4](../day-04-storage/README.md).
