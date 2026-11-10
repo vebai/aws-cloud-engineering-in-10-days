@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Instance ingress from a designated ALB security group only
+Parameters:
+  VpcId:
+    Type: 'AWS::EC2::VPC::Id'
+  AlbSecurityGroupId:
+    Type: 'AWS::EC2::SecurityGroup::Id'
+Resources:
+  ShopInstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: HTTP traffic from a designated ALB security group only
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          SourceSecurityGroupId: !Ref AlbSecurityGroupId
+      Tags: [{Key: Name, Value: shop-instance-sg}]
+Outputs:
+  ShopInstanceSecurityGroupId: {Value: !Ref ShopInstanceSecurityGroup}
