@@ -1,8 +1,41 @@
-# AWS Cloud Engineering in 10 Days — companion repository
+# AWS Cloud Engineering in 10 Days
 
-Practical reader assets for **AWS Cloud Engineering in 10 Days**, by Victor Ebai.
+This is the companion repository for *AWS Cloud Engineering in 10 Days: Build, Secure, Monitor, Troubleshoot, and Operate Your First AWS Environment* by **Victor Ebai**. It provides the Shop application files, CloudFormation examples, day-by-day instructions and validation scripts used by the hands-on exercises.
 
-**The book is the teaching authority.** It explains why and when to use AWS services, the AWS Console walkthroughs, architecture decisions and interpretation of evidence. This companion repository supplies copyable files, careful operating instructions and validation helpers. Follow the book's day-by-day sequence; repository examples are intentionally limited in scope, and do **not** deploy the complete 10-day architecture automatically.
+**The book is fully self-contained.** You can follow the explanations and exercises without cloning this repository. These files offer convenient, testable starting points; they do **not** deploy the entire ten-day environment automatically.
+
+## Get the paperback
+
+**[Find on Amazon UK](https://www.amazon.co.uk/s?k=AWS+Cloud+Engineering+in+10+Days+Victor+Ebai&i=stripbooks)** (default) · [Amazon US](https://www.amazon.com/s?k=AWS+Cloud+Engineering+in+10+Days+Victor+Ebai&i=stripbooks) · [Amazon India](https://www.amazon.in/s?k=AWS+Cloud+Engineering+in+10+Days+Victor+Ebai&i=stripbooks)
+
+**Quick navigation:** [Getting started](#start-here--first-use) · [Day-by-day guides](#day-by-day-contents--clickable-guides) · [Reader files](#other-reader-files) · [Safety and cleanup](#safety-cost-and-cleanup)
+
+The learning path develops one AWS Shop application from account identity and networking to EC2, load balancing, monitoring, infrastructure as code and operational recovery.
+
+![Seven-stage AWS Cloud Engineering learning journey: secure account and IAM, VPC networking, EC2 Shop application, ALB and Auto Scaling, CloudWatch, CloudFormation, and ongoing operations.](docs/images/aws-cloud-engineering-overview.png)
+
+*Learning overview: build and verify the Shop environment, understand how its parts interact, troubleshoot faults and clean up safely. These seven stages summarise the ten-day learning path; they are not a single automated deployment.*
+
+The practical habit is **Orient → Build → Observe → Verify → Diagnose → Recover → Explain → Clean up**. Use the book for the concepts, Console guidance and engineering decisions; use these files to carry out and check the exercises.
+
+## What you will build and practise
+
+- Confirm account identity, Region, IAM permissions and cost boundaries before changing AWS resources.
+- Build VPC networking and deploy an EC2-hosted Shop application with an observable health endpoint.
+- Verify load balancing and Auto Scaling behaviour rather than relying only on resource status.
+- Collect logs and metrics using CloudWatch, and investigate failures from evidence.
+- Work with CloudFormation templates, updates and change sets.
+- Troubleshoot, verify recovery and remove project resources in a controlled order.
+
+## Before you begin
+
+**First-time setup:** [Install the required tools](docs/prerequisites.md), then [configure AWS access and execution context](docs/setup.md).
+
+You need Git, `curl`, Python 3, AWS CLI v2 and an authorised AWS learning account. Optional tools, including `cfn-lint`, are explained in the setup guide. On macOS, Linux or AWS CloudShell, verify the current identity before making changes.
+
+The documented Region is **AWS London (`eu-west-2`)**. Using another Region requires reviewing availability, quotas, resource identifiers and day-specific instructions.
+
+**Cost and security:** EC2, ALB, public IPv4, CloudWatch, storage and other AWS resources can incur charges. Use a dedicated learning environment, prefer temporary credentials, restrict network access, and follow the [cleanup guide](docs/cleanup.md) at the end of every exercise.
 
 ## Start here — first use
 
@@ -73,3 +106,11 @@ AWS resources can incur charges, including running EC2 instances, load balancers
 Licensed under the [MIT Licence](LICENSE).
 
 **Day 9 template progression:** [S3 baseline](days/day-09-infrastructure-as-code/templates/01-baseline.yml) · [parameterised S3](days/day-09-infrastructure-as-code/templates/02-parameterised.yml) · [versioning change-set proposal](days/day-09-infrastructure-as-code/templates/03-suspend-versioning.yml).
+
+## Continue learning
+
+After completing the Shop deployment and operations exercises, [AWS Incident Troubleshooting](https://github.com/vebai/aws-incident-troubleshooting-labs) offers separate, controlled AWS failure scenarios using related Shop concepts. **The incident labs deploy their own resources:** do not reuse or disrupt the environment from this repository.
+
+The [book on Amazon UK](https://www.amazon.co.uk/s?k=AWS+Cloud+Engineering+in+10+Days+Victor+Ebai&i=stripbooks) provides the complete explanations, architectural decisions and verification method.
+
+The reusable code is covered by the [MIT Licence](LICENSE); the book's text and the overview illustration remain © 2026 Victor Ebai.
