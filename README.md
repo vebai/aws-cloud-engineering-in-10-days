@@ -6,7 +6,7 @@ This is the companion repository for *AWS Cloud Engineering in 10 Days: Build, S
 
 ## Get the paperback
 
-**[Find on Amazon UK](https://www.amazon.co.uk/s?k=AWS+Cloud+Engineering+in+10+Days+Victor+Ebai&i=stripbooks)** (default) · [Amazon US](https://www.amazon.com/s?k=AWS+Cloud+Engineering+in+10+Days+Victor+Ebai&i=stripbooks) · [Amazon India](https://www.amazon.in/s?k=AWS+Cloud+Engineering+in+10+Days+Victor+Ebai&i=stripbooks)
+**[Find on Amazon UK](https://www.amazon.co.uk/dp/B0HR7DPTP8)** (default) · [Amazon US](https://www.amazon.com/dp/B0HR7DPTP8) · [Amazon India](https://www.amazon.in/dp/B0HR7DPTP8)
 
 **Quick navigation:** [Getting started](#start-here--first-use) · [Day-by-day guides](#day-by-day-contents--clickable-guides) · [Reader files](#other-reader-files) · [Safety and cleanup](#safety-cost-and-cleanup)
 
@@ -109,8 +109,8 @@ Licensed under the [MIT Licence](LICENSE).
 
 ## Continue learning
 
-After completing the Shop deployment and operations exercises, [AWS Incident Troubleshooting](https://github.com/vebai/aws-incident-troubleshooting-labs) offers separate, controlled AWS failure scenarios using related Shop concepts. **The incident labs deploy their own resources:** do not reuse or disrupt the environment from this repository.
+After completing the Shop deployment and operations exercises, [AWS Incident Troubleshooting](https://www.amazon.co.uk/dp/B0HRCL1B9J) offers separate, controlled AWS failure scenarios using related Shop concepts. **The incident labs deploy their own resources:** do not reuse or disrupt the environment from this repository.
 
-The [book on Amazon UK](https://www.amazon.co.uk/s?k=AWS+Cloud+Engineering+in+10+Days+Victor+Ebai&i=stripbooks) provides the complete explanations, architectural decisions and verification method.
+The [book on Amazon UK](https://www.amazon.co.uk/dp/B0HR7DPTP8) provides the complete explanations, architectural decisions and verification method.
 
 The reusable code is covered by the [MIT Licence](LICENSE); the book's text and the overview illustration remain © 2026 Victor Ebai.
