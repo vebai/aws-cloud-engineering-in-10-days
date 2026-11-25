@@ -4,9 +4,13 @@ This is the companion repository for *AWS Cloud Engineering in 10 Days: Build, S
 
 **The book is fully self-contained.** You can follow the explanations and exercises without cloning this repository. These files offer convenient, testable starting points; they do **not** deploy the entire ten-day environment automatically.
 
-## Get the paperback
+## Get the book on Amazon
 
-**[Find on Amazon UK](https://www.amazon.co.uk/dp/B0HR7DPTP8)**  · [Amazon US](https://www.amazon.com/dp/B0HR7DPTP8) · [Amazon India](https://www.amazon.in/dp/B0HR7DPTP8)
+<a id="get-the-paperback"></a>
+
+**Paperback:** [Amazon UK](https://www.amazon.co.uk/dp/B0HR7NQM3R) · [Amazon US](https://www.amazon.com/dp/B0HR7NQM3R) · [Amazon India](https://www.amazon.in/dp/B0HR7NQM3R)
+
+**Kindle eBook:** [Amazon UK](https://www.amazon.co.uk/dp/B0HR7DPTP8) · [Amazon US](https://www.amazon.com/dp/B0HR7DPTP8) · [Amazon India](https://www.amazon.in/dp/B0HR7DPTP8)
 
 **Quick navigation:** [Getting started](#start-here--first-use) · [Day-by-day guides](#day-by-day-contents--clickable-guides) · [Reader files](#other-reader-files) · [Safety and cleanup](#safety-cost-and-cleanup)
 
